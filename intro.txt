@@ -1,0 +1,13 @@
+Sala de chat en la que podremos mandar mensajes y 
+interactuar con varios clientes a la vez en tiempo real
+
+
+1. Iniciamos proyecto con: npm init
+
+2.Folder server: programamos la parte del servidor
+3.Folder client: tendremos el html final
+
+4.Instalamos dependencias:
+    npm install express --save
+    npm install socket.io --save 
+    npm install nodemon --save-dev

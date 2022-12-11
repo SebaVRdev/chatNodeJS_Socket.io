@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Cargarmos los siguientes fichero para que interactue con el socket que esta en el backen
+    y el cliente -->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <style>
+        #messages{
+            width: 95%;
+            max-width: 400px;
+            height: 350px;
+            overflow-y: scroll;
+            border: 1px solid #eee;
+            box-shadow: 0px 0px 20px #ccc inset;
+        }
+        .message{
+            margin: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat:</h1>
+    <div id="messages">
+        <!-- Aca se imprimen todos los mensajes que se van mandando -->
+    </div>
+    
+    <!-- Formulario para mandar mensajes -->
+    <form onsubmit="return addMessage(this)">
+        <input id="nickname" type="text" placeholder="Nombre"/>
+        <textarea id="text" placeholder="Mensaje..."></textarea>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>
