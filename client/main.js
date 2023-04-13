@@ -1,5 +1,5 @@
 //Vamos a trabajar con los socket
-const socket = io.connect("http://192.168.1.37:6677", { forceNew: true });
+const socket = io.connect({ forceNew: true });
 
 socket.on('messages', data => {
     console.log(data);
@@ -38,5 +38,4 @@ const addMessage = (ev) => {
     textMessage.value = ''
 
     return false; //Para que corte la funcion 
-
 };

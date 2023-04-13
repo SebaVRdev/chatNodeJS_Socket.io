@@ -2,14 +2,14 @@
 const express = require('express');
 const app = express();
 
+const { IP, PORT } = require('../config.js')
+
 //Cargamos servidor http que trae NodeJS
 const server = require('http').Server(app);
 
 //El server se lo tenemos ue pasar a socket.io para que sepa que va 
 //a estar trabajando con sockets dentro de la conxeion http que generemos
 const io = require('socket.io')(server);
-
-const PORT = 6677;
 
 app.use(express.static('client')); //Todo el html que este en carpeta clien se carga
 
@@ -44,5 +44,5 @@ io.on('connection', (socket)=>{
 });
 
 server.listen(PORT, function(){
-    console.log(`Servidor funcionando en el puerto http://localhost:${PORT}`)
+    console.log(`Servidor funcionando en el puerto http://${IP}:${PORT}`)
 });
